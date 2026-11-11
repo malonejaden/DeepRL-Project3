@@ -1,0 +1,7 @@
+torch
+numpy
+gymnasium[box2d]
+matplotlib
+pandas
+opencv-python
+

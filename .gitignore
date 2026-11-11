@@ -1,0 +1,21 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+.conda/
+
+# Model checkpoints and raw run artifacts
+*.pth
+*.pt
+logs/
+runs/
+videos/
+
+# macOS / Editor clutter
+.DS_Store
+
