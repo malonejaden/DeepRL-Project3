@@ -1,0 +1,3 @@
+condition,label,n_seeds,final_return_mean,final_return_std,peak_return_mean,peak_return_std,normalized_auc_mean,normalized_auc_std,reached_500_ratio,steps_to_500_mean,reached_900_ratio,training_time_hrs_mean,training_time_hrs_std,final_eval_len_mean
+baseline,Baseline (Standard Termination),5,730.12,51.03,869.58,27.46,626.85,42.04,5/5,89901.6,1/5,4.8,0.79,246.4
+off_road_term,Off-Road Termination Wrapper,5,568.89,113.16,806.34,41.89,506.08,34.66,5/5,101978.6,0/5,4.06,0.05,155.36
