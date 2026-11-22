@@ -12,6 +12,8 @@ import gymnasium as gym
 import numpy as np
 import torch
 
+from off_road_wrapper import CarRacingOffRoadWrapper
+
 
 def configure_headless_sdl(render_mode: str | None) -> None:
 	"""Use SDL dummy video driver on headless Linux compute nodes when not rendering."""
@@ -135,6 +137,8 @@ def make_env(
 	frame_stack: int = 4,
 	img_size: int = 84,
 	seed: int | None = None,
+	terminate_on_off_road: bool = False,
+	off_road_penalty: float = 0.0,
 ) -> gym.Env:
 	"""Create and wrap a Gymnasium environment for training or evaluation."""
 	configure_headless_sdl(render_mode)
@@ -143,6 +147,9 @@ def make_env(
 		env = gym.make(env_id, render_mode=render_mode, continuous=continuous)
 	else:
 		env = gym.make(env_id, render_mode=render_mode)
+
+	if terminate_on_off_road and "CarRacing" in env_id:
+		env = CarRacingOffRoadWrapper(env, off_road_penalty=off_road_penalty)
 
 	if frame_skip > 1:
 		env = ActionRepeatWrapper(env, skip=frame_skip)

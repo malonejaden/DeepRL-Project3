@@ -19,6 +19,8 @@ def get_args():
 	parser.add_argument("--frame_skip", type=int, default=4, help="Action repeat frame skip")
 	parser.add_argument("--frame_stack", type=int, default=4, help="Number of stacked grayscale frames")
 	parser.add_argument("--img_size", type=int, default=84, help="Resized frame dimension (H=W=img_size)")
+	parser.add_argument("--terminate_on_off_road", action="store_true", default=False, help="Terminate episode when car goes off-road")
+	parser.add_argument("--off_road_penalty", type=float, default=0.0, help="Optional penalty subtracted when terminating off-road")
 
 	# Experiment tracking & reproducibility
 	parser.add_argument("--seed", type=int, default=11, help="Random seed (target seeds: 11, 22, 33, 44, 55)")

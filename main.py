@@ -26,6 +26,8 @@ def train(args) -> None:
 		frame_stack=args.frame_stack,
 		img_size=args.img_size,
 		seed=args.seed,
+		terminate_on_off_road=args.terminate_on_off_road,
+		off_road_penalty=args.off_road_penalty,
 	)
 
 	# Dedicated evaluation environment with separate seed
@@ -37,6 +39,8 @@ def train(args) -> None:
 		frame_stack=args.frame_stack,
 		img_size=args.img_size,
 		seed=args.seed + 1000,
+		terminate_on_off_road=args.terminate_on_off_road,
+		off_road_penalty=args.off_road_penalty,
 	)
 
 	hyperparameters = {
@@ -102,6 +106,8 @@ def test(args) -> None:
 		frame_stack=args.frame_stack,
 		img_size=args.img_size,
 		seed=args.seed + 2000,
+		terminate_on_off_road=args.terminate_on_off_road,
+		off_road_penalty=args.off_road_penalty,
 	)
 
 	model = PPO(policy_class=None, env=test_env, device_str=args.device)

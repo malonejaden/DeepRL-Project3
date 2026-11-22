@@ -1,0 +1,23 @@
+{
+  "condition": "baseline",
+  "seed": 55,
+  "device": "NVIDIA GeForce RTX 3080 Ti (cuda)",
+  "system": "Windows-10-10.0.26200-SP0",
+  "python": "3.11.18",
+  "torch": "2.15.0",
+  "gymnasium": "1.4.0",
+  "is_discrete": false,
+  "is_image": true,
+  "total_timesteps": 500000,
+  "timesteps_per_batch": 2048,
+  "minibatch_size": 128,
+  "n_updates_per_iteration": 10,
+  "max_timesteps_per_episode": 1000,
+  "lr": 0.0003,
+  "gamma": 0.99,
+  "use_gae": true,
+  "gae_lambda": 0.95,
+  "clip": 0.2,
+  "ent_coef": 0.01,
+  "max_grad_norm": 0.5
+}
